@@ -1,7 +1,5 @@
 package kon.blats.factorial;
 
-import sun.awt.util.IdentityLinkedList;
-
 /**
  * Created by kon on 6/5/2018.
  */
