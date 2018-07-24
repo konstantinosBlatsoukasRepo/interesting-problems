@@ -1,5 +1,6 @@
 package kon.blats.sorting.insertion;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -28,5 +29,6 @@ public class InsertionSort {
     public static void main(String[] args) {
         int[] testTable = new int[]{3, 2, 1, 45, 34, 5};
         sort(testTable);
+        System.out.println(Arrays.toString(testTable));
     }
 }
