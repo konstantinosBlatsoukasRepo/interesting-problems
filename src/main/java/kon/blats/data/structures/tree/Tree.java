@@ -49,4 +49,34 @@ public class Tree<T> {
       System.out.println(root.getData());
     }
   }
+
+  public int calculateHeight() {
+    int leftHeight = 0;
+    if (root.getLeft() != null) {
+      leftHeight++;
+      leftHeight = leftHeight + calculateSubtreeHeight(root.getLeft());
+    }
+    int rightHeight = 0;
+    if (root.getRight() != null) {
+      rightHeight++;
+      rightHeight = rightHeight + calculateSubtreeHeight(root.getRight());
+    }
+    if (leftHeight > rightHeight) {
+      return leftHeight;
+    }
+    return rightHeight;
+  }
+
+  public int calculateSubtreeHeight(TreeNode<T> treeNode) {
+    int height = 0;
+    if (treeNode.getLeft() == null && treeNode.getRight() == null) {
+      return height;
+    } else if (treeNode.getLeft() != null) {
+      height = 1 + calculateSubtreeHeight(treeNode.getLeft());
+    } else {
+      height = 1 + calculateSubtreeHeight(treeNode.getRight());
+    }
+    return height;
+  }
+
 }
