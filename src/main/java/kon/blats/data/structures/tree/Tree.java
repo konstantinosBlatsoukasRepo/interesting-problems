@@ -51,32 +51,16 @@ public class Tree<T> {
   }
 
   public int calculateHeight() {
-    int leftHeight = 0;
-    if (root.getLeft() != null) {
-      leftHeight++;
-      leftHeight = leftHeight + calculateSubtreeHeight(root.getLeft());
-    }
-    int rightHeight = 0;
-    if (root.getRight() != null) {
-      rightHeight++;
-      rightHeight = rightHeight + calculateSubtreeHeight(root.getRight());
-    }
-    if (leftHeight > rightHeight) {
-      return leftHeight;
-    }
-    return rightHeight;
+    return calculateHeight(root);
   }
 
-  public int calculateSubtreeHeight(TreeNode<T> treeNode) {
-    int height = 0;
-    if (treeNode.getLeft() == null && treeNode.getRight() == null) {
-      return height;
-    } else if (treeNode.getLeft() != null) {
-      height = 1 + calculateSubtreeHeight(treeNode.getLeft());
-    } else {
-      height = 1 + calculateSubtreeHeight(treeNode.getRight());
+  public int calculateHeight(TreeNode<T> treeNode) {
+    if (treeNode == null) {
+      return 0;
     }
-    return height;
+    int leftTreeHeight = calculateHeight(treeNode.getLeft());
+    int rightTreeHeight = calculateHeight(treeNode.getRight());
+    return Math.max(leftTreeHeight, rightTreeHeight) + 1;
   }
 
 }
