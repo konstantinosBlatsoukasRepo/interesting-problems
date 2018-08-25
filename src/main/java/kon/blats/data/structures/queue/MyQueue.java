@@ -1,7 +1,5 @@
 package kon.blats.data.structures.queue;
 
-import kon.blats.data.structures.stack.MyStack;
-
 /**
  * Created by k.blatsoukas on 8/14/2018.
  */

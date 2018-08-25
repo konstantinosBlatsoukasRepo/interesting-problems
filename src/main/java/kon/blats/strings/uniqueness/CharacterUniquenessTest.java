@@ -1,4 +1,4 @@
-package kon.blats.character.uniqueness;
+package kon.blats.strings.uniqueness;
 
 import java.util.HashSet;
 import java.util.Set;
