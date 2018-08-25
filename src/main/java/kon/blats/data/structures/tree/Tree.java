@@ -49,4 +49,18 @@ public class Tree<T> {
       System.out.println(root.getData());
     }
   }
+
+  public int calculateHeight() {
+    return calculateHeight(root);
+  }
+
+  public int calculateHeight(TreeNode<T> treeNode) {
+    if (treeNode == null) {
+      return 0;
+    }
+    int leftTreeHeight = calculateHeight(treeNode.getLeft());
+    int rightTreeHeight = calculateHeight(treeNode.getRight());
+    return Math.max(leftTreeHeight, rightTreeHeight) + 1;
+  }
+
 }
