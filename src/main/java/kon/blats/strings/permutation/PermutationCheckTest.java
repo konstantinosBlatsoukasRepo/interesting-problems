@@ -1,4 +1,4 @@
-package kon.blats.permutation;
+package kon.blats.strings.permutation;
 
 import java.util.Arrays;
 

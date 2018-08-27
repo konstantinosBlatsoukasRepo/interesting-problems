@@ -1,4 +1,4 @@
-package kon.blats.palindrome.permutation;
+package kon.blats.strings.permutation;
 
 /**
  * Created by kon on 12/8/2018.
