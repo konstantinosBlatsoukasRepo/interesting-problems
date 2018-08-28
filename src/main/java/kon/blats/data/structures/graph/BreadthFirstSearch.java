@@ -51,10 +51,7 @@ public class BreadthFirstSearch {
         graph.addEgde(4, 2);
 
         BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch(graph);
-        Set<Integer> visited = null;
         System.out.println(breadthFirstSearch.isThereAPath(0, 4));
-        breadthFirstSearch.search(0, visited);
-        System.out.println();
     }
 
 }
