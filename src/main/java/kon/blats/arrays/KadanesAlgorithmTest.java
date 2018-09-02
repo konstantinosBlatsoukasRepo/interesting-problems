@@ -1,4 +1,4 @@
-package kon.blats.largest.sum.contiguous.subarray;
+package kon.blats.arrays;
 
 /**
  * Created by k.blatsoukas on 7/18/2018.

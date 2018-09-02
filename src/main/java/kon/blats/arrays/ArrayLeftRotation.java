@@ -1,4 +1,4 @@
-package kon.blats.rotate.an.array;
+package kon.blats.arrays;
 
 import java.util.Arrays;
 import java.util.Objects;
