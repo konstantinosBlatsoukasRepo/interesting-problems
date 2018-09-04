@@ -7,7 +7,7 @@
     * [Tree](#tree)
 * [Sorting](#sorting)
     * [Collections](#collections)
-    * [Char array](#char-array)
+    * [primitives](#primitives)
 
 ## Data structures
 
@@ -126,3 +126,76 @@ Another interesting thing to notice is that, if the key-value is already in
 in the collection and you try to add a different value with the same key
 the previous value is replaced with the new one (in the above example notice what happened to value with the key 123)
 
+## Sorting
+### primitives
+
+how to sort a primitive array in java
+Example :
+```java
+    char[] name = "konstantinos blatsoukas".toCharArray();
+    Arrays.sort(name);
+    for (int i = 0; i < name.length; i++) {
+        char c = name[i];
+        if (c != ' ') {
+            System.out.print(c);
+        }
+    }
+```
+Output
+```
+aaabikklnnnooosssstttu
+```
+The above example sorts an array in ascending order (the Arrays.sort method supports sorting for the other primitives types as well)
+### Collections
+Let's see how we can sort a collection of objcects based on some attribute
+bellow we have the class Person that has two attributes name and age
+```java
+public class Person {
+    private String name;
+    private Integer age;
+
+    public Person(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+}
+```
+Let's try to sort 2 Person based on the age
+```java
+    Person kostas = new Person("Kostas", 32);
+    Person eleni = new Person("Eleni", 34);
+
+    Comparator<Person> ageComparator = Comparator.comparing(Person::getAge);
+
+    List<Person> persons = new ArrayList<>();
+    persons.add(kostas);
+    persons.add(eleni);
+
+    Collections.sort(persons, ageComparator);
+    for (int i = 0; i < persons.size(); i++) {
+        Person person =  persons.get(i);
+        System.out.println(person.getName());
+    }
+```
+Output
+```
+Kostas
+Eleni
+```
